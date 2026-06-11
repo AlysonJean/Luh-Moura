@@ -80,6 +80,15 @@ export default function Contato() {
                  </p>
               </header>
 
+              <div className="relative rounded-[3rem] overflow-hidden aspect-[16/9] shadow-xl shadow-primary/10">
+                 <Image src="/images/dra-contato.webp" alt="Dra. Luh Moura" fill sizes="(min-width: 1024px) 600px, 100vw" className="object-cover" />
+                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/5 to-transparent" />
+                 <div className="absolute bottom-8 left-8">
+                    <p className="text-white font-black text-xl tracking-tight">Dra. Luh Moura</p>
+                    <p className="text-white/70 text-[10px] font-black uppercase tracking-[0.3em]">Fundadora & Especialista</p>
+                 </div>
+              </div>
+
               <div className="space-y-6">
                  {contactMethods.map((method, i) => (
                     <a key={i} href={method.link} target="_blank" rel="noopener noreferrer" className="glass-card flex items-center gap-8 p-8 rounded-[2.5rem] border-primary/5 hover:border-primary/20 hover:scale-[1.02] transition-all group">

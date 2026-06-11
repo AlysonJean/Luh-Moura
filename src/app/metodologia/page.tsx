@@ -55,20 +55,25 @@ export default function Metodologia() {
       </nav>
 
       <main className="container mx-auto px-6 pt-48">
-        <div className="max-w-4xl mx-auto space-y-32">
-          
+        <div className="max-w-6xl mx-auto space-y-32">
+
           {/* Hero Section */}
-          <section className="text-center space-y-10 sda-reveal">
-            <div className="inline-flex items-center gap-3 rounded-full border border-primary/20 bg-white px-6 py-2.5 text-[10px] font-black uppercase tracking-[0.3em] text-primary shadow-sm">
-                O Manifesto Luh Moura
+          <section className="grid lg:grid-cols-2 gap-16 items-center sda-reveal">
+            <div className="text-center lg:text-left space-y-10">
+              <div className="inline-flex items-center gap-3 rounded-full border border-primary/20 bg-white px-6 py-2.5 text-[10px] font-black uppercase tracking-[0.3em] text-primary shadow-sm">
+                  O Manifesto Luh Moura
+              </div>
+              <h1 className="text-[var(--font-size-hero)] font-black leading-[0.85] tracking-tighter text-foreground">
+                Ciência com <br />
+                <span className="font-serif text-gradient-rose italic font-medium">Alma Artistica.</span>
+              </h1>
+              <p className="text-xl text-muted font-medium leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                Acreditamos que a verdadeira beleza não é uma construção, mas uma herança protegida e aprimorada com o que há de mais avançado na biomedicina mundial.
+              </p>
             </div>
-            <h1 className="text-[var(--font-size-hero)] font-black leading-[0.85] tracking-tighter text-foreground">
-              Ciência com <br />
-              <span className="font-serif text-gradient-rose italic font-medium">Alma Artistica.</span>
-            </h1>
-            <p className="text-xl text-muted font-medium leading-relaxed max-w-2xl mx-auto">
-              Acreditamos que a verdadeira beleza não é uma construção, mas uma herança protegida e aprimorada com o que há de mais avançado na biomedicina mundial.
-            </p>
+            <div className="relative aspect-[3/4] max-w-md w-full mx-auto rounded-[3rem] overflow-hidden shadow-2xl shadow-primary/10">
+              <Image src="/images/dra-metodologia.webp" alt="Dra. Luh Moura" fill sizes="(min-width: 1024px) 480px, 100vw" className="object-cover" priority />
+            </div>
           </section>
 
           {/* The Pillars */}

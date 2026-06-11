@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { SVGProps } from "react";
-import { Sparkles, ArrowRight, ShieldCheck, Heart, MessageSquare, Award, Instagram } from "lucide-react";
+import { Sparkles, ArrowRight, ShieldCheck, MessageSquare, Award, Instagram } from "lucide-react";
 import { auth } from "@/lib/auth";
 import { Logo } from "@/components/logo";
 
@@ -119,11 +119,14 @@ export default async function Home() {
               <p className="text-sm font-medium opacity-60">Sua jornada protegida por criptografia de ponta e sigilo absoluto.</p>
            </div>
 
-           {/* Personalization Block */}
-           <div className="md:col-span-3 lg:col-span-2 glass-card rounded-[3rem] p-10 space-y-5 hover:translate-y-[-10px] transition-transform duration-700 delay-300 bg-secondary/10 border-secondary/20 sda-reveal">
-              <Heart className="h-8 w-8 text-primary sda-float" />
-              <h4 className="text-2xl font-black tracking-tight">Humanized Tech</h4>
-              <p className="text-sm font-medium text-muted leading-relaxed">Tecnologia que entende suas necessidades e respeita sua individualidade.</p>
+           {/* Signature Block */}
+           <div className="md:col-span-3 lg:col-span-2 relative overflow-hidden rounded-[3rem] hover:translate-y-[-10px] transition-transform duration-700 delay-300 sda-reveal min-h-[20rem]">
+              <Image src="/images/dra-assinatura.webp" alt="Dra. Luh Moura" fill sizes="(min-width: 1024px) 480px, 100vw" className="object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-10 space-y-2">
+                 <p className="font-serif italic text-2xl text-white font-medium leading-tight">&ldquo;Cada protocolo carrega minha assinatura.&rdquo;</p>
+                 <span className="text-[10px] font-black uppercase tracking-[0.3em] text-white/70">Dra. Luh Moura</span>
+              </div>
            </div>
 
            {/* Call to Action Banner */}

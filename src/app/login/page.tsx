@@ -88,6 +88,9 @@ function PatientLogin() {
     return (
       <div className="space-y-8">
         <div className="text-center space-y-2">
+          <div className="relative h-16 w-16 rounded-full overflow-hidden mx-auto mb-2 ring-4 ring-white shadow-lg shadow-primary/10">
+            <Image src="/images/dra-login.webp" alt="Dra. Luh Moura" fill sizes="64px" className="object-cover object-top" />
+          </div>
           <h2 className="text-xl font-black tracking-tight">Bem-vinda</h2>
           <p className="text-xs text-muted font-medium">
             Insira seu WhatsApp para receber o link de acesso.

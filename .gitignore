@@ -38,6 +38,7 @@ yarn-error.log*
 
 # raw AI-generated source images (already optimized into public/images/)
 /public/imagens luh moura/
+/public/imagens dra/
 
 # typescript
 *.tsbuildinfo
