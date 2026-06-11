@@ -1,0 +1,206 @@
+@import "tailwindcss";
+@plugin "tailwindcss-animate";
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+
+  /* Luh Moura Signature Typography & Spacing */
+  --font-sans: var(--font-jost), var(--font-inter), ui-sans-serif, sans-serif;
+  --font-serif: var(--font-playfair), Georgia, serif;
+  --font-size-hero: clamp(3rem, 10vw + 1rem, 9rem);
+  --font-size-section: clamp(2rem, 5vw + 1rem, 4.5rem);
+  --spacing-fluid: clamp(2rem, 8vw, 10rem);
+
+  /* Signature motion */
+  --animate-spin-slow: spin-slow 14s linear infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-reveal: reveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@layer base {
+  :root {
+    /* Luh Moura Signature Palette — Rose Gold Heritage */
+    --background: #FDF8F6;       /* Ivory Silk */
+    --foreground: #3A2A2E;       /* Mauve Charcoal */
+    --primary: #D4A5B5;          /* Rose Gold */
+    --primary-foreground: #3A2A2E;
+    --secondary: #F7E7EC;        /* Blush Petal */
+    --muted: #9C7E88;            /* Dusty Rose Taupe */
+    --muted-foreground: #6E545C;
+    --popover: #FFFFFF;
+    --popover-foreground: #3A2A2E;
+    --card: #FFFFFF;
+    --card-foreground: #3A2A2E;
+    --border: rgba(193, 122, 148, 0.18);
+    --input: #F7E7EC;
+    --ring: #D4A5B5;
+    --radius: 1.5rem;
+
+    /* Rose Gold gradient stops — monogram & wordmark */
+    --rose-deep: #A8536B;
+    --rose-mid: #D4A5B5;
+    --rose-light: #F7E7EC;
+    --rose-highlight: #FBEFF2;
+  }
+
+  .dark {
+    --background: #20161A;       /* Wine Noir */
+    --foreground: #F7E7EC;
+    --primary: #D9AEBE;
+    --primary-foreground: #2A1D22;
+    --secondary: #34242A;
+    --muted: #B3919B;
+    --muted-foreground: #E3C2CC;
+    --popover: #2A1D22;
+    --popover-foreground: #F7E7EC;
+    --card: #2A1D22;
+    --card-foreground: #F7E7EC;
+    --border: rgba(217, 174, 190, 0.14);
+    --input: #34242A;
+    --ring: #D9AEBE;
+
+    --rose-deep: #D9AEBE;
+    --rose-mid: #C2899A;
+    --rose-light: #3A2830;
+    --rose-highlight: #EAC9D4;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/60 backdrop-blur-xl border border-white/30 dark:bg-black/30 dark:border-white/10;
+  }
+
+  .glass-card {
+    @apply bg-white/60 backdrop-blur-xl border border-white/30 dark:bg-black/30 dark:border-white/10 shadow-[0_8px_32px_0_rgba(168,83,107,0.08)] dark:shadow-[0_8px_32px_0_rgba(0,0,0,0.5)];
+  }
+
+  .bento-grid {
+    @apply grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-4;
+  }
+
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.25) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite linear;
+  }
+
+  /* Rose Gold gradient text — for wordmark & signature headings (kept dark enough to stay legible on light/dark bg) */
+  .text-gradient-rose {
+    background-image: linear-gradient(115deg, var(--foreground) 10%, var(--rose-deep) 50%, var(--foreground) 90%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .bg-gradient-rose {
+    background-image: linear-gradient(135deg, var(--rose-deep) 0%, var(--rose-mid) 55%, var(--rose-highlight) 100%);
+  }
+
+  /* Soft rose-gold glow beneath the logo mark & wordmark */
+  .logo-shadow {
+    filter: drop-shadow(0 6px 18px color-mix(in srgb, var(--rose-deep) 40%, transparent));
+  }
+
+  /* Soft mesh gradient background — premium ambient glow */
+  .mesh-bg {
+    background-image:
+      radial-gradient(at 15% 15%, color-mix(in srgb, var(--primary) 30%, transparent) 0px, transparent 55%),
+      radial-gradient(at 85% 5%, color-mix(in srgb, var(--rose-highlight) 60%, transparent) 0px, transparent 50%),
+      radial-gradient(at 0% 85%, color-mix(in srgb, var(--rose-deep) 14%, transparent) 0px, transparent 50%),
+      radial-gradient(at 90% 95%, color-mix(in srgb, var(--secondary) 70%, transparent) 0px, transparent 55%);
+  }
+
+  /* Subtle grain texture for premium depth */
+  .bg-texture {
+    background-image: radial-gradient(color-mix(in srgb, var(--foreground) 7%, transparent) 1px, transparent 1px);
+    background-size: 16px 16px;
+  }
+
+  /* Signature scroll/entrance reveal */
+  .sda-reveal {
+    animation: var(--animate-reveal);
+  }
+
+  /* Gentle floating accent */
+  .sda-float {
+    animation: var(--animate-float);
+  }
+
+  @keyframes shimmer {
+    to { background-position: -200% 0; }
+  }
+
+  @keyframes spin-slow {
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-14px); }
+  }
+
+  @keyframes reveal {
+    from {
+      opacity: 0;
+      transform: translateY(28px);
+      filter: blur(6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+  }
+}
+
+@layer base {
+  * { @apply border-border outline-ring/50; }
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-primary/30 selection:text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    cursor: default;
+  }
+}
+
+/* 2026 Immersive Transitions */
+::view-transition-group(root) {
+  animation-duration: 0.8s;
+  animation-timing-function: cubic-bezier(0.85, 0, 0.15, 1);
+}
+
+::view-transition-new(root) {
+  animation-name: immersive-reveal;
+}
+
+@keyframes immersive-reveal {
+  from {
+    clip-path: circle(0% at 50% 50%);
+    filter: blur(20px);
+  }
+  to {
+    clip-path: circle(150% at 50% 50%);
+    filter: blur(0);
+  }
+}
