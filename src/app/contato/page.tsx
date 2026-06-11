@@ -7,6 +7,7 @@ import { LogoMark } from "@/components/logo";
 export const metadata: Metadata = {
   title: "Contato | Luh Moura Estética Avançada",
   description: "Fale com a equipe da Dra. Luh Moura via WhatsApp, telefone ou redes sociais e agende sua avaliação.",
+  openGraph: { title: "Contato | Luh Moura Estética Avançada", description: "Fale com a equipe da Dra. Luh Moura via WhatsApp, telefone ou redes sociais e agende sua avaliação." }
 };
 
 export default function Contato() {

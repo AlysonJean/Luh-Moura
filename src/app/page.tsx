@@ -5,6 +5,19 @@ import { Sparkles, ArrowRight, ShieldCheck, MessageSquare, Award, Instagram } fr
 import { auth } from "@/lib/auth";
 import { Logo } from "@/components/logo";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Luh Moura | Estética Avançada",
+  description: "Procedimentos de estética avançada e acompanhamento exclusivo com Dra. Luh Moura.",
+  openGraph: {
+    title: "Luh Moura | Estética Avançada",
+    description: "Procedimentos de estética avançada e acompanhamento exclusivo com Dra. Luh Moura.",
+  },
+};
+
+
+
 export default async function Home() {
   const session = await auth();
   const role = session?.user?.role;
@@ -33,10 +46,10 @@ export default async function Home() {
           <Logo markClassName="h-11 w-11 transition-transform hover:rotate-6" wordmarkClassName="h-6" />
 
           <div className="hidden md:flex items-center gap-10 text-[10px] font-black uppercase tracking-[0.2em] opacity-80">
-            <Link href="/procedimentos" className="hover:text-primary transition-colors">Procedimentos</Link>
-            <Link href="/metodologia" className="hover:text-primary transition-colors">Metodologia</Link>
-            <Link href="/tecnologia" className="hover:text-primary transition-colors">Tecnologia</Link>
-            <Link href="/contato" className="hover:text-primary transition-colors">Contato</Link>
+            <Link href="/procedimentos" className="hover:text-primary transition-colors py-2">Procedimentos</Link>
+            <Link href="/metodologia" className="hover:text-primary transition-colors py-2">Metodologia</Link>
+            <Link href="/tecnologia" className="hover:text-primary transition-colors py-2">Tecnologia</Link>
+            <Link href="/contato" className="hover:text-primary transition-colors py-2">Contato</Link>
           </div>
 
           <Link href={restrictedHref} className="px-6 py-2.5 rounded-xl bg-foreground text-background font-bold text-[10px] uppercase tracking-widest transition-all hover:bg-muted active:scale-95 shadow-lg shadow-foreground/10">
@@ -94,7 +107,7 @@ export default async function Home() {
                  <Award className="h-8 w-8 text-white sda-float" />
               </div>
               <div className="space-y-4 relative z-10 max-w-md">
-                <h3 className="font-serif italic text-[var(--font-size-section)] font-black leading-tight tracking-tighter">O Selo Luh Moura</h3>
+                <h2 className="font-serif italic text-[var(--font-size-section)] font-black leading-tight tracking-tighter">O Selo Luh Moura</h2>
                 <p className="text-muted text-lg font-medium leading-relaxed">Mais que tratamentos, entregamos um legado de cuidado. Cada detalhe é planejado para que sua jornada seja tão impecável quanto o resultado.</p>
               </div>
               <div className="h-px w-full bg-gradient-to-r from-primary/30 to-transparent relative z-10" />
@@ -115,7 +128,7 @@ export default async function Home() {
               <div className="h-12 w-12 rounded-xl bg-primary flex items-center justify-center">
                 <ShieldCheck className="h-6 w-6 text-foreground sda-float" />
               </div>
-              <h4 className="text-2xl font-black tracking-tight">Privacidade Total</h4>
+              <h3 className="text-2xl font-black tracking-tight">Privacidade Total</h3>
               <p className="text-sm font-medium opacity-60">Sua jornada protegida por criptografia de ponta e sigilo absoluto.</p>
            </div>
 
@@ -140,7 +153,7 @@ export default async function Home() {
               />
               <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-white/30 dark:from-black/85 dark:via-black/70 dark:to-black/20" />
               <div className="relative z-10 space-y-6 p-12 text-center md:text-left">
-                 <h3 className="font-serif italic text-[var(--font-size-section)] font-black tracking-tighter">Manifeste o seu melhor.</h3>
+                 <h2 className="font-serif italic text-[var(--font-size-section)] font-black tracking-tighter">Manifeste o seu melhor.</h2>
                  <p className="text-muted font-medium max-w-sm">Estamos prontos para desenhar seu novo capítulo. Agende sua avaliação VIP hoje mesmo.</p>
                  <a
                    href="https://wa.me/5531985537919"
@@ -192,21 +205,21 @@ export default async function Home() {
           </div>
 
           <div className="space-y-8">
-            <h4 className="text-[10px] font-black uppercase tracking-widest text-primary">Navegação Elite</h4>
+            <h3 className="text-[10px] font-black uppercase tracking-widest text-primary">Navegação Elite</h3>
             <ul className="space-y-4">
-              <li><Link href="/procedimentos" className="text-[10px] font-black uppercase tracking-widest text-muted hover:text-foreground transition-colors">Procedimentos</Link></li>
-              <li><Link href="/metodologia" className="text-[10px] font-black uppercase tracking-widest text-muted hover:text-foreground transition-colors">Metodologia</Link></li>
-              <li><Link href="/tecnologia" className="text-[10px] font-black uppercase tracking-widest text-muted hover:text-foreground transition-colors">Tecnologia</Link></li>
-              <li><Link href="/contato" className="text-[10px] font-black uppercase tracking-widest text-muted hover:text-foreground transition-colors">Contato VIP</Link></li>
+              <li><Link href="/procedimentos" className="block py-2 text-[10px] font-black uppercase tracking-widest text-muted hover:text-foreground transition-colors">Procedimentos</Link></li>
+              <li><Link href="/metodologia" className="block py-2 text-[10px] font-black uppercase tracking-widest text-muted hover:text-foreground transition-colors">Metodologia</Link></li>
+              <li><Link href="/tecnologia" className="block py-2 text-[10px] font-black uppercase tracking-widest text-muted hover:text-foreground transition-colors">Tecnologia</Link></li>
+              <li><Link href="/contato" className="block py-2 text-[10px] font-black uppercase tracking-widest text-muted hover:text-foreground transition-colors">Contato VIP</Link></li>
             </ul>
           </div>
 
           <div className="space-y-8">
-            <h4 className="text-[10px] font-black uppercase tracking-widest text-primary">Contato Concierge</h4>
+            <h3 className="text-[10px] font-black uppercase tracking-widest text-primary">Contato Concierge</h3>
             <div className="space-y-2">
               <p className="text-xs font-black">Belo Horizonte, MG</p>
               <p className="text-[11px] text-muted font-medium">Lourdes • Unidade Conceito</p>
-              <a href="tel:+5531985537919" className="text-xs font-black block pt-2">(31) 98553-7919</a>
+              <a href="tel:+5531985537919" className="text-xs font-black block py-3">(31) 98553-7919</a>
             </div>
           </div>
         </div>

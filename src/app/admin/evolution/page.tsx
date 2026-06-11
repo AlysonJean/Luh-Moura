@@ -5,6 +5,19 @@ import { ChevronLeft } from 'lucide-react';
 import Link from 'next/link';
 import { db } from '@/lib/db';
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Admin - Evolution | Luh Moura Estética",
+  description: "Procedimentos de estética avançada e acompanhamento exclusivo com Dra. Luh Moura.",
+  openGraph: {
+    title: "Admin - Evolution | Luh Moura Estética",
+    description: "Procedimentos de estética avançada e acompanhamento exclusivo com Dra. Luh Moura.",
+  },
+};
+
+
+
 export const dynamic = 'force-dynamic';
 
 export default async function EvolutionPage({

@@ -26,12 +26,12 @@ export default function ConsentPage() {
   return (
     <div className="min-h-screen bg-background mesh-bg p-6">
       <div className="max-w-xl mx-auto space-y-8">
-        <header className="flex items-center gap-4">
+        <div className="flex items-center gap-4">
           <Link href="/portal" className="p-2 rounded-xl bg-secondary text-primary">
             <ChevronLeft className="h-6 w-6" />
           </Link>
           <h1 className="font-serif italic text-2xl font-black tracking-tight text-foreground">Assinar Termo</h1>
-        </header>
+        </div>
 
         <section className="glass-card rounded-3xl border-primary/10 p-6 shadow-xl space-y-6">
           <div className="flex items-center gap-3 text-primary">

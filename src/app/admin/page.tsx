@@ -5,6 +5,19 @@ import { LogoutButton } from '@/components/logout-button';
 import { Logo, LogoMark } from '@/components/logo';
 import { db } from '@/lib/db';
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Admin | Luh Moura Estética",
+  description: "Procedimentos de estética avançada e acompanhamento exclusivo com Dra. Luh Moura.",
+  openGraph: {
+    title: "Admin | Luh Moura Estética",
+    description: "Procedimentos de estética avançada e acompanhamento exclusivo com Dra. Luh Moura.",
+  },
+};
+
+
+
 export const dynamic = 'force-dynamic';
 
 const currencyFormatter = new Intl.NumberFormat('pt-BR', {
@@ -38,7 +51,7 @@ export default async function AdminDashboard() {
 
   const stats = [
     { label: 'Pacientes', value: String(patientCount), icon: Users, color: 'text-blue-500' },
-    { label: 'Sessões/Mês', value: String(sessionsThisMonth), icon: Calendar, color: 'text-purple-500' },
+    { label: 'Sessões/Mês', value: String(sessionsThisMonth), icon: Calendar, color: 'text-emerald-500' },
     {
       label: 'Faturamento',
       value: currencyFormatter.format(Number(revenueAgg._sum.totalAmount ?? 0)),

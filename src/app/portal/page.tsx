@@ -8,6 +8,19 @@ import { LogoMark } from '@/components/logo';
 import { auth } from '@/lib/auth';
 import { db } from '@/lib/db';
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Portal | Luh Moura Estética",
+  description: "Procedimentos de estética avançada e acompanhamento exclusivo com Dra. Luh Moura.",
+  openGraph: {
+    title: "Portal | Luh Moura Estética",
+    description: "Procedimentos de estética avançada e acompanhamento exclusivo com Dra. Luh Moura.",
+  },
+};
+
+
+
 const PAYMENT_STATUS_LABELS: Record<string, string> = {
   PENDING: 'Pagamento pendente',
   PAID: 'Pago',

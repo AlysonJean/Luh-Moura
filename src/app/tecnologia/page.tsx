@@ -7,6 +7,7 @@ import { LogoMark } from "@/components/logo";
 export const metadata: Metadata = {
   title: "Tecnologia | Luh Moura Estética Avançada",
   description: "Equipamentos de última geração como Ultraformer MPT e Morpheus8 para resultados de alta performance.",
+  openGraph: { title: "Tecnologia | Luh Moura Estética Avançada", description: "Equipamentos de última geração como Ultraformer MPT e Morpheus8 para resultados de alta performance." }
 };
 
 export default function Tecnologia() {

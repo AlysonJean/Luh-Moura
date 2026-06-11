@@ -7,6 +7,7 @@ import { LogoMark } from "@/components/logo";
 export const metadata: Metadata = {
   title: "Metodologia | Luh Moura Estética Avançada",
   description: "Conheça os pilares da metodologia da Dra. Luh Moura: bioestética de precisão, curadoria de ativos e cuidado humanizado.",
+  openGraph: { title: "Metodologia | Luh Moura Estética Avançada", description: "Conheça os pilares da metodologia da Dra. Luh Moura: bioestética de precisão, curadoria de ativos e cuidado humanizado." }
 };
 
 export default function Metodologia() {

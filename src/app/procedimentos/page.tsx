@@ -7,6 +7,7 @@ import { LogoMark } from "@/components/logo";
 export const metadata: Metadata = {
   title: "Procedimentos | Luh Moura Estética Avançada",
   description: "Conheça os protocolos exclusivos de harmonização facial, body sculpt e longevidade da Dra. Luh Moura.",
+  openGraph: { title: "Procedimentos | Luh Moura Estética Avançada", description: "Conheça os protocolos exclusivos de harmonização facial, body sculpt e longevidade da Dra. Luh Moura." }
 };
 
 export default function Procedimentos() {
