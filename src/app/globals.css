@@ -21,8 +21,8 @@
   --radius-3xl: calc(var(--radius) + 12px);
 
   /* Luh Moura Signature Typography & Spacing */
-  --font-sans: var(--font-jost), var(--font-inter), ui-sans-serif, sans-serif;
-  --font-serif: var(--font-playfair), Georgia, serif;
+  --font-sans: var(--font-montserrat), "Montserrat", system-ui, sans-serif;
+  --font-serif: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
   --font-size-hero: clamp(3rem, 10vw + 1rem, 9rem);
   --font-size-section: clamp(2rem, 5vw + 1rem, 4.5rem);
   --spacing-fluid: clamp(2rem, 8vw, 10rem);

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { SVGProps } from "react";
-import { Sparkles, ArrowRight, ShieldCheck, MessageSquare, Award, Instagram } from "lucide-react";
+import { Sparkles, ArrowRight, ShieldCheck, MessageSquare, Award, Instagram, Heart } from "lucide-react";
 import { auth } from "@/lib/auth";
 import { Logo } from "@/components/logo";
 
@@ -45,10 +45,12 @@ export default async function Home() {
         <div className="glass-card px-8 py-5 rounded-[2rem] flex items-center justify-between border-primary/10 bg-white/70 dark:bg-black/30">
           <Logo markClassName="h-11 w-11 transition-transform hover:rotate-6" wordmarkClassName="h-6" />
 
-          <div className="hidden md:flex items-center gap-10 text-[10px] font-black uppercase tracking-[0.2em] opacity-80">
+          <div className="hidden md:flex items-center gap-10 text-[10px] font-medium uppercase tracking-[0.2em] opacity-80">
+            <Link href="/quem-somos" className="hover:text-primary transition-colors py-2">Quem Somos</Link>
             <Link href="/procedimentos" className="hover:text-primary transition-colors py-2">Procedimentos</Link>
             <Link href="/metodologia" className="hover:text-primary transition-colors py-2">Metodologia</Link>
             <Link href="/tecnologia" className="hover:text-primary transition-colors py-2">Tecnologia</Link>
+            <Link href="/criolipolise-em-casa" className="hover:text-primary transition-colors py-2">Criolipólise em Casa</Link>
             <Link href="/contato" className="hover:text-primary transition-colors py-2">Contato</Link>
           </div>
 
@@ -61,12 +63,12 @@ export default async function Home() {
       {/* Hero Section - Signature Heritage */}
       <main className="container relative mx-auto px-6 pt-56 pb-32">
         <div className="flex flex-col items-center text-center space-y-14 max-w-5xl mx-auto sda-reveal">
-          <div className="inline-flex items-center gap-3 rounded-full border border-primary/20 bg-white px-6 py-2.5 text-[10px] font-black uppercase tracking-[0.3em] text-muted-foreground shadow-sm">
+          <div className="inline-flex items-center gap-3 rounded-full border border-primary/20 bg-white px-6 py-2.5 text-[10px] font-medium uppercase tracking-[0.3em] text-muted-foreground shadow-sm">
              <div className="h-1.5 w-1.5 rounded-full bg-primary animate-ping" />
              Protocolos Exclusivos • Belo Horizonte
           </div>
           
-          <h1 className="text-[var(--font-size-hero)] font-black leading-[0.9] tracking-tighter text-foreground">
+          <h1 className="text-[var(--font-size-hero)] font-medium leading-[0.9] tracking-tighter text-foreground">
             Excelência em <br />
             <span className="font-serif text-gradient-rose italic font-medium">Harmonização.</span>
           </h1>
@@ -78,7 +80,7 @@ export default async function Home() {
           <div className="flex flex-col gap-5 sm:flex-row pt-8">
             <Link
               href="/portal"
-              className="group relative flex h-20 items-center justify-center gap-4 rounded-[2rem] bg-primary px-14 text-sm font-black uppercase tracking-widest text-foreground shadow-2xl shadow-primary/20 transition-all hover:scale-[1.02] hover:bg-primary/90 active:scale-[0.98]"
+              className="group relative flex h-20 items-center justify-center gap-4 rounded-[2rem] bg-primary px-14 text-sm font-medium uppercase tracking-widest text-foreground shadow-2xl shadow-primary/20 transition-all hover:scale-[1.02] hover:bg-primary/90 active:scale-[0.98]"
             >
               Meu Portal de Evolução
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-2" />
@@ -88,7 +90,7 @@ export default async function Home() {
               href="https://wa.me/5531985537919"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex h-20 items-center justify-center gap-4 rounded-[2rem] border-2 border-primary/30 bg-white/50 px-14 text-sm font-black uppercase tracking-widest text-foreground transition-all hover:bg-primary/10 active:scale-[0.98] backdrop-blur-sm cursor-pointer shadow-lg shadow-white/10"
+              className="flex h-20 items-center justify-center gap-4 rounded-[2rem] border-2 border-primary/30 bg-white/50 px-14 text-sm font-medium uppercase tracking-widest text-foreground transition-all hover:bg-primary/10 active:scale-[0.98] backdrop-blur-sm cursor-pointer shadow-lg shadow-white/10"
             >
               <MessageSquare className="h-5 w-5" />
               WhatsApp VIP
@@ -107,20 +109,20 @@ export default async function Home() {
                  <Award className="h-8 w-8 text-white sda-float" />
               </div>
               <div className="space-y-4 relative z-10 max-w-md">
-                <h2 className="font-serif italic text-[var(--font-size-section)] font-black leading-tight tracking-tighter">O Selo Luh Moura</h2>
+                <h2 className="font-serif italic text-[var(--font-size-section)] font-medium leading-tight tracking-tighter">O Selo Luh Moura</h2>
                 <p className="text-muted text-lg font-medium leading-relaxed">Mais que tratamentos, entregamos um legado de cuidado. Cada detalhe é planejado para que sua jornada seja tão impecável quanto o resultado.</p>
               </div>
               <div className="h-px w-full bg-gradient-to-r from-primary/30 to-transparent relative z-10" />
               <div className="flex gap-4 relative z-10">
-                 <span className="px-4 py-2 rounded-full bg-secondary/30 text-[9px] font-black uppercase tracking-widest">Naturalidade</span>
-                 <span className="px-4 py-2 rounded-full bg-secondary/30 text-[9px] font-black uppercase tracking-widest">Precisão</span>
+                 <span className="px-4 py-2 rounded-full bg-secondary/30 text-[9px] font-medium uppercase tracking-widest">Naturalidade</span>
+                 <span className="px-4 py-2 rounded-full bg-secondary/30 text-[9px] font-medium uppercase tracking-widest">Precisão</span>
               </div>
            </div>
 
-           {/* Experience Mockup Stats */}
+           {/* Care Highlight */}
            <div className="md:col-span-2 lg:col-span-1 glass-card rounded-[3rem] p-10 flex flex-col items-center justify-center text-center space-y-3 hover:translate-y-[-10px] transition-transform duration-700 delay-100 border-secondary/20">
-              <span className="text-6xl font-black text-primary tracking-tighter italic">98%</span>
-              <span className="text-[10px] uppercase font-black tracking-widest text-muted">Satisfação Platinum</span>
+              <Heart className="h-10 w-10 text-primary sda-float" />
+              <span className="text-[10px] uppercase font-medium tracking-widest text-muted">Cuidado Genuíno</span>
            </div>
 
            {/* Secure Heritage Block */}
@@ -128,7 +130,7 @@ export default async function Home() {
               <div className="h-12 w-12 rounded-xl bg-primary flex items-center justify-center">
                 <ShieldCheck className="h-6 w-6 text-foreground sda-float" />
               </div>
-              <h3 className="text-2xl font-black tracking-tight">Privacidade Total</h3>
+              <h3 className="text-2xl font-medium tracking-tight">Privacidade Total</h3>
               <p className="text-sm font-medium opacity-60">Sua jornada protegida por criptografia de ponta e sigilo absoluto.</p>
            </div>
 
@@ -138,7 +140,7 @@ export default async function Home() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-10 space-y-2">
                  <p className="font-serif italic text-2xl text-white font-medium leading-tight">&ldquo;Cada protocolo carrega minha assinatura.&rdquo;</p>
-                 <span className="text-[10px] font-black uppercase tracking-[0.3em] text-white/70">Dra. Luh Moura</span>
+                 <span className="text-[10px] font-medium uppercase tracking-[0.3em] text-white/70">Dra. Luh Moura</span>
               </div>
            </div>
 
@@ -153,13 +155,13 @@ export default async function Home() {
               />
               <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-white/30 dark:from-black/85 dark:via-black/70 dark:to-black/20" />
               <div className="relative z-10 space-y-6 p-12 text-center md:text-left">
-                 <h2 className="font-serif italic text-[var(--font-size-section)] font-black tracking-tighter">Manifeste o seu melhor.</h2>
+                 <h2 className="font-serif italic text-[var(--font-size-section)] font-medium tracking-tighter">Manifeste o seu melhor.</h2>
                  <p className="text-muted font-medium max-w-sm">Estamos prontos para desenhar seu novo capítulo. Agende sua avaliação VIP hoje mesmo.</p>
                  <a
                    href="https://wa.me/5531985537919"
                    target="_blank"
                    rel="noopener noreferrer"
-                   className="flex items-center gap-2 text-primary font-black uppercase text-xs tracking-widest group"
+                   className="flex items-center gap-2 text-primary font-medium uppercase text-xs tracking-widest group"
                  >
                     Descobrir mais <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-2" />
                  </a>
@@ -205,27 +207,30 @@ export default async function Home() {
           </div>
 
           <div className="space-y-8">
-            <h3 className="text-[10px] font-black uppercase tracking-widest text-primary">Navegação Elite</h3>
+            <h3 className="text-[10px] font-medium uppercase tracking-widest text-primary">Navegação Elite</h3>
             <ul className="space-y-4">
-              <li><Link href="/procedimentos" className="block py-2 text-[10px] font-black uppercase tracking-widest text-muted hover:text-foreground transition-colors">Procedimentos</Link></li>
-              <li><Link href="/metodologia" className="block py-2 text-[10px] font-black uppercase tracking-widest text-muted hover:text-foreground transition-colors">Metodologia</Link></li>
-              <li><Link href="/tecnologia" className="block py-2 text-[10px] font-black uppercase tracking-widest text-muted hover:text-foreground transition-colors">Tecnologia</Link></li>
-              <li><Link href="/contato" className="block py-2 text-[10px] font-black uppercase tracking-widest text-muted hover:text-foreground transition-colors">Contato VIP</Link></li>
+              <li><Link href="/quem-somos" className="block py-2 text-[10px] font-medium uppercase tracking-widest text-muted hover:text-foreground transition-colors">Quem Somos</Link></li>
+              <li><Link href="/procedimentos" className="block py-2 text-[10px] font-medium uppercase tracking-widest text-muted hover:text-foreground transition-colors">Procedimentos</Link></li>
+              <li><Link href="/metodologia" className="block py-2 text-[10px] font-medium uppercase tracking-widest text-muted hover:text-foreground transition-colors">Metodologia</Link></li>
+              <li><Link href="/tecnologia" className="block py-2 text-[10px] font-medium uppercase tracking-widest text-muted hover:text-foreground transition-colors">Tecnologia</Link></li>
+              <li><Link href="/criolipolise-em-casa" className="block py-2 text-[10px] font-medium uppercase tracking-widest text-muted hover:text-foreground transition-colors">Criolipólise em Casa</Link></li>
+              <li><Link href="/duvidas-frequentes" className="block py-2 text-[10px] font-medium uppercase tracking-widest text-muted hover:text-foreground transition-colors">Dúvidas Frequentes</Link></li>
+              <li><Link href="/contato" className="block py-2 text-[10px] font-medium uppercase tracking-widest text-muted hover:text-foreground transition-colors">Contato VIP</Link></li>
             </ul>
           </div>
 
           <div className="space-y-8">
-            <h3 className="text-[10px] font-black uppercase tracking-widest text-primary">Contato Concierge</h3>
+            <h3 className="text-[10px] font-medium uppercase tracking-widest text-primary">Contato Concierge</h3>
             <div className="space-y-2">
-              <p className="text-xs font-black">Belo Horizonte, MG</p>
-              <p className="text-[11px] text-muted font-medium">Lourdes • Unidade Conceito</p>
-              <a href="tel:+5531985537919" className="text-xs font-black block py-3">(31) 98553-7919</a>
+              <p className="text-xs font-medium">Belo Horizonte, MG</p>
+              <p className="text-[11px] text-muted font-medium">Atendimento por Agendamento</p>
+              <a href="tel:+5531985537919" className="text-xs font-medium block py-3">(31) 98553-7919</a>
             </div>
           </div>
         </div>
 
         <div className="container mx-auto px-6 pt-24 text-center border-t border-primary/5 mt-16">
-          <p className="text-[9px] font-black uppercase tracking-[0.4em] opacity-30">© 2026 Luh Moura Estética Avançada • Heritage Edition</p>
+          <p className="text-[9px] font-medium uppercase tracking-[0.4em] opacity-30">© 2026 Luh Moura Estética Avançada • Heritage Edition</p>
         </div>
       </footer>
     </div>

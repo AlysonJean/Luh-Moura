@@ -1,22 +1,18 @@
 import type { Metadata } from "next";
-import { Inter, Jost, Playfair_Display } from "next/font/google";
+import { Montserrat, Cormorant_Garamond } from "next/font/google";
 import "@/app/globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 
-const jost = Jost({
+const montserrat = Montserrat({
   subsets: ["latin"],
-  variable: "--font-jost",
+  variable: "--font-montserrat",
 });
 
-const inter = Inter({
+const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
-  variable: "--font-inter",
-});
-
-const playfair = Playfair_Display({
-  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
   style: ["normal", "italic"],
-  variable: "--font-playfair",
+  variable: "--font-cormorant",
 });
 
 export const metadata: Metadata = {
@@ -37,7 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
-      <body className={`${jost.variable} ${inter.variable} ${playfair.variable} font-sans`}>
+      <body className={`${montserrat.variable} ${cormorant.variable} font-sans`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="light"

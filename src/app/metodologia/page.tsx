@@ -41,13 +41,13 @@ export default function Metodologia() {
 
       <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[min(90%,1200px)]">
         <div className="glass-card px-8 py-4 rounded-[2rem] flex items-center justify-between border-primary/10 bg-white/70">
-          <Link href="/" className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-muted hover:text-primary transition-colors">
+          <Link href="/" className="flex items-center gap-2 text-[10px] font-medium uppercase tracking-widest text-muted hover:text-primary transition-colors">
             <ArrowLeft className="h-4 w-4" />
             Voltar
           </Link>
           <div className="flex items-center gap-3">
             <LogoMark className="h-9 w-9" />
-            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-foreground">Essência Signature</span>
+            <span className="text-[10px] font-medium uppercase tracking-[0.3em] text-foreground">Essência Signature</span>
           </div>
           <Link href="/portal" className="px-5 py-2 rounded-xl bg-foreground text-background font-bold text-[9px] uppercase tracking-widest transition-all hover:bg-muted shadow-lg shadow-foreground/10">
             Acesso VIP
@@ -61,10 +61,10 @@ export default function Metodologia() {
           {/* Hero Section */}
           <section className="grid lg:grid-cols-2 gap-16 items-center sda-reveal">
             <div className="text-center lg:text-left space-y-10">
-              <div className="inline-flex items-center gap-3 rounded-full border border-primary/20 bg-white px-6 py-2.5 text-[10px] font-black uppercase tracking-[0.3em] text-primary shadow-sm">
+              <div className="inline-flex items-center gap-3 rounded-full border border-primary/20 bg-white px-6 py-2.5 text-[10px] font-medium uppercase tracking-[0.3em] text-primary shadow-sm">
                   O Manifesto Luh Moura
               </div>
-              <h1 className="text-[var(--font-size-hero)] font-black leading-[0.85] tracking-tighter text-foreground">
+              <h1 className="text-[var(--font-size-hero)] font-medium leading-[0.85] tracking-tighter text-foreground">
                 Ciência com <br />
                 <span className="font-serif text-gradient-rose italic font-medium">Alma Artistica.</span>
               </h1>
@@ -84,7 +84,7 @@ export default function Metodologia() {
                    <div className="h-16 w-16 rounded-2xl bg-white flex items-center justify-center shadow-xl shadow-primary/5 group-hover:scale-110 transition-transform bg-texture">
                       {pillar.icon}
                    </div>
-                   <h3 className="text-2xl font-black tracking-tight">{pillar.title}</h3>
+                   <h3 className="text-2xl font-medium tracking-tight">{pillar.title}</h3>
                    <p className="text-muted text-sm leading-relaxed font-medium opacity-80">{pillar.description}</p>
                 </div>
              ))}
@@ -95,13 +95,13 @@ export default function Metodologia() {
              <div className="relative z-10 flex flex-col md:flex-row gap-16 items-center">
                 <div className="flex-1 space-y-8">
                    <Award className="h-12 w-12 text-primary" />
-                   <h2 className="text-5xl font-black tracking-tighter leading-none">O Selo de <br /><span className="font-serif text-gradient-rose italic">Excelência LM.</span></h2>
+                   <h2 className="text-5xl font-medium tracking-tighter leading-none">O Selo de <br /><span className="font-serif text-gradient-rose italic">Excelência LM.</span></h2>
                    <p className="text-muted font-medium leading-relaxed text-lg">
-                      Cada protocolo desenvolvido pela Dra. Luh Moura carrega um selo de compromisso absoluto. Não aceitamos nada menos que a perfeição técnica, protegida pelo mais alto padrão de segurança biológica e ética médica.
+                      Cada protocolo desenvolvido pela Dra. Luh Moura carrega um selo de compromisso absoluto. Não aceitamos nada menos que a perfeição técnica, protegida pelo mais alto padrão de segurança biológica e ética profissional.
                    </p>
                    <ul className="space-y-4 pt-4">
                       {["Rastreabilidade de Ativos", "Certificação de Protocolos Luxo", "Controle de Resultados 4k"].map((t, idx) => (
-                         <li key={idx} className="flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.2em] text-foreground/70">
+                         <li key={idx} className="flex items-center gap-3 text-[10px] font-medium uppercase tracking-[0.2em] text-foreground/70">
                             <div className="h-1 w-4 bg-primary rounded-full" />
                             {t}
                          </li>
@@ -118,8 +118,8 @@ export default function Metodologia() {
 
           {/* Call To Action */}
           <section className="text-center pb-24 sda-reveal">
-             <h3 className="text-4xl font-black tracking-tighter mb-10">Dê o primeiro passo para sua melhor versão.</h3>
-             <Link href="/contato" className="inline-flex h-20 items-center justify-center gap-4 rounded-[2rem] bg-foreground text-background px-16 text-sm font-black uppercase tracking-widest hover:bg-muted transition-all active:scale-95 shadow-2xl">
+             <h3 className="text-4xl font-medium tracking-tighter mb-10">Dê o primeiro passo para sua melhor versão.</h3>
+             <Link href="/contato" className="inline-flex h-20 items-center justify-center gap-4 rounded-[2rem] bg-foreground text-background px-16 text-sm font-medium uppercase tracking-widest hover:bg-muted transition-all active:scale-95 shadow-2xl">
                 Agendar Minha Consultoria VIP
                 <ChevronRight className="h-5 w-5" />
              </Link>

@@ -30,7 +30,7 @@ export default function ConsentPage() {
           <Link href="/portal" className="p-2 rounded-xl bg-secondary text-primary">
             <ChevronLeft className="h-6 w-6" />
           </Link>
-          <h1 className="font-serif italic text-2xl font-black tracking-tight text-foreground">Assinar Termo</h1>
+          <h1 className="font-serif italic text-2xl font-medium tracking-tight text-foreground">Assinar Termo</h1>
         </div>
 
         <section className="glass-card rounded-3xl border-primary/10 p-6 shadow-xl space-y-6">

@@ -35,7 +35,7 @@ function AutoLogin({ token, phone }: { token: string; phone: string }) {
         <button
           type="button"
           onClick={() => router.replace('/login')}
-          className="text-xs font-black uppercase tracking-widest text-primary underline"
+          className="text-xs font-medium uppercase tracking-widest text-primary underline"
         >
           Voltar ao login
         </button>
@@ -91,7 +91,7 @@ function PatientLogin() {
           <div className="relative h-16 w-16 rounded-full overflow-hidden mx-auto mb-2 ring-4 ring-white shadow-lg shadow-primary/10">
             <Image src="/images/dra-login.webp" alt="Dra. Luh Moura" fill sizes="64px" className="object-cover object-top" />
           </div>
-          <h2 className="text-xl font-black tracking-tight">Bem-vinda</h2>
+          <h2 className="text-xl font-medium tracking-tight">Bem-vinda</h2>
           <p className="text-xs text-muted font-medium">
             Insira seu WhatsApp para receber o link de acesso.
           </p>
@@ -104,7 +104,7 @@ function PatientLogin() {
               placeholder="(31) 90000-0000"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
-              className="block w-full rounded-2xl border border-primary/20 bg-white/50 px-4 py-5 text-xl text-center font-black tracking-widest focus:border-primary focus:ring-8 focus:ring-primary/10 outline-none transition-all placeholder:opacity-30"
+              className="block w-full rounded-2xl border border-primary/20 bg-white/50 px-4 py-5 text-xl text-center font-medium tracking-widest focus:border-primary focus:ring-8 focus:ring-primary/10 outline-none transition-all placeholder:opacity-30"
               required
             />
           </div>
@@ -114,7 +114,7 @@ function PatientLogin() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full rounded-2xl bg-primary py-5 px-4 text-xs font-black uppercase tracking-[0.3em] text-foreground shadow-2xl shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all disabled:opacity-60"
+            className="w-full rounded-2xl bg-primary py-5 px-4 text-xs font-medium uppercase tracking-[0.3em] text-foreground shadow-2xl shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all disabled:opacity-60"
           >
             {loading ? 'Gerando...' : 'Gerar Link de Acesso'}
           </button>
@@ -126,7 +126,7 @@ function PatientLogin() {
   return (
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
       <div className="text-center space-y-3">
-        <h2 className="text-2xl font-black tracking-tighter">
+        <h2 className="text-2xl font-medium tracking-tighter">
           {whatsappLink ? 'Link Pronto!' : 'Verifique seu WhatsApp'}
         </h2>
         <p className="text-xs text-muted font-medium leading-relaxed">
@@ -142,7 +142,7 @@ function PatientLogin() {
             href={whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex w-full items-center justify-center gap-3 rounded-2xl bg-[#25D366] py-5 px-4 text-xs font-black uppercase tracking-[0.3em] text-white shadow-2xl shadow-[#25D366]/20 hover:scale-[1.02] active:scale-[0.98] transition-all"
+            className="flex w-full items-center justify-center gap-3 rounded-2xl bg-[#25D366] py-5 px-4 text-xs font-medium uppercase tracking-[0.3em] text-white shadow-2xl shadow-[#25D366]/20 hover:scale-[1.02] active:scale-[0.98] transition-all"
           >
             Abrir WhatsApp
           </a>
@@ -151,7 +151,7 @@ function PatientLogin() {
         <button
           type="button"
           onClick={() => setStep('input')}
-          className="w-full py-2 text-[10px] font-black uppercase tracking-widest text-muted hover:text-primary transition-colors"
+          className="w-full py-2 text-[10px] font-medium uppercase tracking-widest text-muted hover:text-primary transition-colors"
         >
           Voltar e alterar número
         </button>
@@ -190,7 +190,7 @@ function StaffLogin() {
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="text-center space-y-2">
-        <h2 className="text-xl font-black tracking-tight">Acesso da Equipe</h2>
+        <h2 className="text-xl font-medium tracking-tight">Acesso da Equipe</h2>
         <p className="text-xs text-muted font-medium">Entre com seu e-mail e senha cadastrados.</p>
       </div>
 
@@ -217,7 +217,7 @@ function StaffLogin() {
       <button
         type="submit"
         disabled={loading}
-        className="w-full rounded-2xl bg-foreground py-5 px-4 text-xs font-black uppercase tracking-[0.3em] text-background shadow-2xl transition-all hover:scale-[1.02] active:scale-[0.98] disabled:opacity-60"
+        className="w-full rounded-2xl bg-foreground py-5 px-4 text-xs font-medium uppercase tracking-[0.3em] text-background shadow-2xl transition-all hover:scale-[1.02] active:scale-[0.98] disabled:opacity-60"
       >
         {loading ? 'Entrando...' : 'Entrar'}
       </button>
@@ -254,7 +254,7 @@ function LoginContent() {
             <span className="relative inline-block h-9 aspect-[1400/242]">
               <Image src="/brand/logo-wordmark.png" alt="Luh Moura" fill sizes="240px" className="object-contain logo-shadow" priority />
             </span>
-            <p className="text-[10px] text-muted-foreground uppercase tracking-[0.4em] font-black">Estética Avançada</p>
+            <p className="text-[10px] text-muted-foreground uppercase tracking-[0.4em] font-medium">Estética Avançada</p>
           </div>
         </div>
 
@@ -266,7 +266,7 @@ function LoginContent() {
               <button
                 type="button"
                 onClick={() => setTab('patient')}
-                className={`flex-1 rounded-xl py-2 text-[10px] font-black uppercase tracking-widest transition-all ${
+                className={`flex-1 rounded-xl py-2 text-[10px] font-medium uppercase tracking-widest transition-all ${
                   tab === 'patient' ? 'bg-white shadow-sm text-primary' : 'text-muted'
                 }`}
               >
@@ -275,7 +275,7 @@ function LoginContent() {
               <button
                 type="button"
                 onClick={() => setTab('staff')}
-                className={`flex-1 rounded-xl py-2 text-[10px] font-black uppercase tracking-widest transition-all ${
+                className={`flex-1 rounded-xl py-2 text-[10px] font-medium uppercase tracking-widest transition-all ${
                   tab === 'staff' ? 'bg-white shadow-sm text-primary' : 'text-muted'
                 }`}
               >
@@ -288,7 +288,7 @@ function LoginContent() {
         )}
 
         <div className="pt-4 text-center border-t border-primary/5">
-          <p className="text-[9px] text-muted opacity-60 uppercase tracking-[0.3em] font-black">
+          <p className="text-[9px] text-muted opacity-60 uppercase tracking-[0.3em] font-medium">
             Privacidade Garantida & LGPD Compliant
           </p>
         </div>

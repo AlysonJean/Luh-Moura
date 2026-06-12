@@ -42,7 +42,7 @@ export function Logo({ className = "", markClassName = "h-10 w-10", wordmarkClas
           />
         </span>
         {tagline && (
-          <span className="text-[9px] font-black uppercase tracking-[0.35em] text-foreground/70">
+          <span className="text-[9px] font-medium uppercase tracking-[0.35em] text-foreground/70">
             Estética Avançada
           </span>
         )}

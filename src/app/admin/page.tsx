@@ -158,7 +158,7 @@ export default async function AdminDashboard() {
 
                   <div className="flex items-center gap-4">
                     <div className="text-right">
-                      <p className={`text-xl font-black ${
+                      <p className={`text-xl font-medium ${
                         item.status === 'critical' ? 'text-red-500' :
                         item.status === 'warning' ? 'text-yellow-500' :
                         'text-emerald-500'

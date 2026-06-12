@@ -26,7 +26,7 @@ export function LogoutButton({ variant = "full" }: LogoutButtonProps) {
     <button
       type="button"
       onClick={() => signOut({ callbackUrl: "/" })}
-      className="w-full flex items-center justify-center gap-2 py-4 text-[10px] font-black uppercase tracking-[0.3em] text-muted-foreground hover:text-primary transition-colors sda-reveal"
+      className="w-full flex items-center justify-center gap-2 py-4 text-[10px] font-medium uppercase tracking-[0.3em] text-muted-foreground hover:text-primary transition-colors sda-reveal"
     >
       <LogOut className="h-4 w-4" />
       Encerrar Sessão

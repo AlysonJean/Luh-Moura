@@ -45,7 +45,7 @@ export default async function EvolutionPage({
             <ChevronLeft className="h-6 w-6 text-primary" />
           </Link>
           <div>
-            <h1 className="font-serif italic text-2xl font-black tracking-tight text-foreground">Mapeamento do Paciente</h1>
+            <h1 className="font-serif italic text-2xl font-medium tracking-tight text-foreground">Mapeamento do Paciente</h1>
             <p className="text-sm text-muted-foreground">Registro fotográfico e marcações de evolução</p>
           </div>
         </header>

@@ -54,7 +54,7 @@ export default async function PatientPortal() {
            </Link>
            <div className="flex items-center gap-2">
               <LogoMark className="h-8 w-8" />
-              <span className="text-xs font-black uppercase tracking-widest text-muted uppercase">Portal VIP</span>
+              <span className="text-xs font-medium uppercase tracking-widest text-muted uppercase">Portal VIP</span>
            </div>
         </div>
         <div className="flex items-center gap-4">
@@ -76,7 +76,7 @@ export default async function PatientPortal() {
            <div className="relative">
               <div className="h-32 w-32 rounded-full bg-secondary/40 flex items-center justify-center border-4 border-background shadow-xl overflow-hidden">
                  {/* Monogram in Avatar */}
-                 <div className="font-serif text-gradient-rose font-black text-4xl italic tracking-tighter">LM</div>
+                 <div className="font-serif text-gradient-rose font-medium text-4xl italic tracking-tighter">LM</div>
               </div>
               <div className="absolute bottom-1 right-1 h-8 w-8 rounded-full bg-primary border-4 border-background flex items-center justify-center shadow-lg">
                  <Camera className="h-3 w-3 text-white" />
@@ -84,15 +84,15 @@ export default async function PatientPortal() {
            </div>
 
            <div className="space-y-1">
-              <h2 className="font-serif italic text-[var(--font-size-section)] font-black tracking-tight text-foreground">Bem-vinda, {firstName}.</h2>
-              <p className="text-[10px] font-black uppercase tracking-[0.2em] text-primary">Estética Avançada</p>
+              <h2 className="font-serif italic text-[var(--font-size-section)] font-medium tracking-tight text-foreground">Bem-vinda, {firstName}.</h2>
+              <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-primary">Estética Avançada</p>
            </div>
         </section>
 
         {/* Treatments Section - Real Data */}
         {session.user.role === 'PATIENT' && (
           <section className="space-y-3 sda-reveal">
-            <h3 className="text-[10px] font-black uppercase tracking-[0.3em] text-muted px-2">Meus Tratamentos</h3>
+            <h3 className="text-[10px] font-medium uppercase tracking-[0.3em] text-muted px-2">Meus Tratamentos</h3>
             {treatments.length === 0 ? (
               <p className="p-5 rounded-3xl glass-card border border-primary/5 shadow-sm text-xs font-medium text-muted-foreground">
                 Nenhum tratamento registrado até o momento.
@@ -101,7 +101,7 @@ export default async function PatientPortal() {
               treatments.map((treatment) => (
                 <div key={treatment.id} className="flex items-center justify-between p-5 rounded-3xl glass-card border border-primary/5 shadow-sm">
                   <div>
-                    <p className="text-sm font-black text-foreground/80">{treatment.name}</p>
+                    <p className="text-sm font-medium text-foreground/80">{treatment.name}</p>
                     <p className="text-[10px] font-bold uppercase tracking-widest text-muted">
                       {treatment.completedSessions}/{treatment.totalSessions} sessões • {PAYMENT_STATUS_LABELS[treatment.paymentStatus] ?? treatment.paymentStatus}
                     </p>
@@ -124,7 +124,7 @@ export default async function PatientPortal() {
                  <div className="h-10 w-10 rounded-2xl bg-secondary/20 flex items-center justify-center">
                     <User className="h-5 w-5 text-muted" />
                  </div>
-                 <span className="text-sm font-black text-foreground/80">Profile</span>
+                 <span className="text-sm font-medium text-foreground/80">Profile</span>
               </div>
               <ChevronRight className="h-4 w-4 text-primary opacity-40 group-hover:translate-x-1 transition-transform" />
            </div>
@@ -134,7 +134,7 @@ export default async function PatientPortal() {
                  <div className="h-10 w-10 rounded-2xl bg-secondary/20 flex items-center justify-center">
                     <FileText className="h-5 w-5 text-muted" />
                  </div>
-                 <span className="text-sm font-black text-foreground/80">Contratos</span>
+                 <span className="text-sm font-medium text-foreground/80">Contratos</span>
               </div>
               <ChevronRight className="h-4 w-4 text-primary opacity-40 group-hover:translate-x-1 transition-transform" />
            </div>
@@ -149,7 +149,7 @@ export default async function PatientPortal() {
                  <div className="h-10 w-10 rounded-2xl bg-secondary/20 flex items-center justify-center">
                     <MessageCircle className="h-5 w-5 text-muted" />
                  </div>
-                 <span className="text-sm font-black text-foreground/80">Mensagens</span>
+                 <span className="text-sm font-medium text-foreground/80">Mensagens</span>
               </div>
               <ChevronRight className="h-4 w-4 text-primary opacity-40 group-hover:translate-x-1 transition-transform" />
            </a>
@@ -158,10 +158,10 @@ export default async function PatientPortal() {
         {/* Evolution Teaser - Platinum Luxury */}
         <section className="relative overflow-hidden rounded-[2.5rem] bg-foreground p-8 text-background shadow-2xl shadow-foreground/20 active:scale-[0.98] transition-all cursor-pointer group sda-reveal">
           <div className="relative z-10 space-y-3">
-            <h2 className="text-2xl font-black tracking-tighter italic">Ver Evolução</h2>
+            <h2 className="text-2xl font-medium tracking-tighter italic">Ver Evolução</h2>
             <p className="opacity-60 text-xs font-medium max-w-[180px]">Compare seus resultados em alta definição.</p>
             <div className="pt-2">
-               <span className="inline-flex items-center gap-2 rounded-full bg-primary/20 px-4 py-2 text-[10px] font-black uppercase tracking-widest text-primary backdrop-blur-md">
+               <span className="inline-flex items-center gap-2 rounded-full bg-primary/20 px-4 py-2 text-[10px] font-medium uppercase tracking-widest text-primary backdrop-blur-md">
                  Acessar Galeria
                </span>
             </div>

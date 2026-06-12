@@ -25,6 +25,12 @@ enum PaymentType {
   CASH
 }
 
+enum PaymentStatus {
+  PENDING
+  PAID
+  PARTIAL
+}
+
 model User {
   id           String     @id @default(cuid())
   name         String
@@ -40,7 +46,7 @@ model Patient {
   id            String          @id @default(cuid())
   name          String
   cpf           String?         @unique
-  whatsapp      String
+  whatsapp      String          @unique
   email         String?
   birthDate     DateTime?
   createdAt     DateTime        @default(now())
@@ -50,15 +56,13 @@ model Patient {
   consents      ConsentLog[]
   stockMovements StockMovement[]
   loginTokens   LoginToken[]
-
-  @@index([whatsapp])
 }
 
 model LoginToken {
   id        String    @id @default(cuid())
   tokenHash String    @unique
   patientId String
-  patient   Patient   @relation(fields: [patientId], references: [id])
+  patient   Patient   @relation(fields: [patientId], references: [id], onDelete: Cascade)
   expiresAt DateTime
   usedAt    DateTime?
   createdAt DateTime  @default(now())
@@ -74,10 +78,13 @@ model TreatmentPlan {
   totalSessions     Int             @default(1)
   completedSessions Int             @default(0)
   totalAmount       Decimal         @db.Decimal(10, 2)
-  paymentStatus     String          @default("PENDING")
+  paymentStatus     PaymentStatus   @default(PENDING)
   records           MedicalRecord[]
   createdAt         DateTime        @default(now())
   updatedAt         DateTime        @updatedAt
+
+  @@index([patientId])
+  @@index([createdAt])
 }
 
 model MedicalRecord {
@@ -87,7 +94,7 @@ model MedicalRecord {
   treatmentPlanId String?
   treatmentPlan   TreatmentPlan?    @relation(fields: [treatmentPlanId], references: [id])
   procedureName   String
-  anamneseData    Json
+  anamneseData    Json?
   photoUrl        String?
   annotations     Json?
   notes           String?
@@ -95,6 +102,10 @@ model MedicalRecord {
   stockMovements  StockMovement[]
   createdAt       DateTime          @default(now())
   updatedAt       DateTime          @updatedAt
+
+  @@index([patientId])
+  @@index([treatmentPlanId])
+  @@index([createdAt])
 }
 
 model InventoryItem {
@@ -121,6 +132,8 @@ model InventoryBatch {
   movements       StockMovement[]
   createdAt       DateTime        @default(now())
   updatedAt       DateTime        @updatedAt
+
+  @@index([itemId])
 }
 
 model StockMovement {
@@ -136,6 +149,11 @@ model StockMovement {
   quantityChange Int
   reason         String
   createdAt      DateTime        @default(now())
+
+  @@index([itemId])
+  @@index([batchId])
+  @@index([patientId])
+  @@index([recordId])
 }
 
 model ConsentLog {
@@ -146,6 +164,8 @@ model ConsentLog {
   ipAddress   String
   userAgent   String
   acceptedAt  DateTime @default(now())
+
+  @@index([patientId])
 }
 
 model AuditLog {
@@ -156,4 +176,7 @@ model AuditLog {
   resourceId String?
   timestamp  DateTime @default(now())
   details    String?
+
+  @@index([userId])
+  @@index([timestamp])
 }
