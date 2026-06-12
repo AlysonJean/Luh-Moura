@@ -42,7 +42,7 @@ export default function Tecnologia() {
 
       <MarketingNav label="Alquimia Moderna" ctaHref="/contato" ctaLabel="Agendar" />
 
-      <main className="container mx-auto px-6 pt-48">
+      <main className="container mx-auto px-6 pt-28 sm:pt-36 md:pt-48">
         <header className="max-w-3xl mb-32 sda-reveal">
            <div className="inline-flex items-center gap-2 mb-6 text-[10px] font-medium uppercase tracking-[0.4em] text-primary">
               <Cpu className="h-4 w-4" />
@@ -93,7 +93,7 @@ export default function Tecnologia() {
 
         {/* Integration Teaser */}
         <section className="mt-40 text-center space-y-12 sda-reveal">
-           <h2 className="text-5xl font-medium tracking-tighter leading-none max-w-2xl mx-auto">Tudo controlado pela palma da sua mão.</h2>
+           <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tighter leading-[1.1] max-w-2xl mx-auto">Tudo controlado pela palma da sua mão.</h2>
            <p className="text-muted-foreground font-medium leading-relaxed max-w-xl mx-auto">No nosso portal, você acompanha cada parâmetro tecnológico utilizado em seus protocolos e visualiza sua evolução em alta definição.</p>
            <Link href="/login" className="group inline-flex items-center gap-3 text-primary font-medium uppercase text-xs tracking-widest">
               Acesse seu histórico tecnológico <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-2" />

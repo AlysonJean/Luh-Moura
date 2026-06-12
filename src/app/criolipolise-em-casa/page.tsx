@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { Home, Lock, HeartHandshake, Snowflake, MessageSquare, CheckCircle2, ChevronDown, Sparkles } from "lucide-react";
+import { Home, Lock, HeartHandshake, Snowflake, MessageSquare, CheckCircle2, ChevronDown, Sparkles, Cpu, Waves, Zap, Lightbulb, Thermometer } from "lucide-react";
 import { MarketingNav } from "@/components/marketing-nav";
 import { NoiseFilter } from "@/components/noise-filter";
 
@@ -30,6 +30,29 @@ const beneficios = [
     description: "Atendimento dedicado a você, sem pressa, com tempo para tirar todas as suas dúvidas com a especialista.",
     icon: <HeartHandshake className="h-6 w-6 text-primary" />
   }
+];
+
+const techFeatures = [
+  {
+    title: "Criolipólise de Precisão",
+    description: "As placas resfriam a região tratada a -10°C, com controle de temperatura em tempo real exibido na tela touch e aquecimento gradual ao final da sessão, para mais segurança e conforto.",
+    icon: <Snowflake className="h-6 w-6 text-primary" />
+  },
+  {
+    title: "Ultracavitação",
+    description: "Ondas de ultrassom de alta frequência atuam sobre as células de gordura, auxiliando na remodelação do contorno corporal de forma não invasiva.",
+    icon: <Waves className="h-6 w-6 text-primary" />
+  },
+  {
+    title: "Ondas de Choque (PSW)",
+    description: "Ondas de choque piezoelétricas estimulam a regeneração celular, contribuindo para a melhora da textura da pele e do aspecto da celulite.",
+    icon: <Zap className="h-6 w-6 text-primary" />
+  },
+  {
+    title: "Luz LED",
+    description: "Fototerapia que estimula a produção de colágeno, contribuindo para uma pele com aspecto mais viçoso e uniforme.",
+    icon: <Lightbulb className="h-6 w-6 text-primary" />
+  },
 ];
 
 const passos = [
@@ -81,7 +104,7 @@ export default function CriolipoliseEmCasa() {
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-      <main className="container mx-auto px-6 pt-48">
+      <main className="container mx-auto px-6 pt-28 sm:pt-36 md:pt-48">
         <div className="max-w-6xl mx-auto space-y-32">
 
           {/* Hero */}
@@ -113,8 +136,8 @@ export default function CriolipoliseEmCasa() {
                 </p>
               </div>
             </div>
-            <div className="relative aspect-[4/5] max-w-md w-full mx-auto rounded-[3rem] overflow-hidden shadow-2xl shadow-primary/10">
-              <Image src="/images/body-sculpt.webp" alt="Criolipólise em casa" fill sizes="(min-width: 1024px) 480px, 100vw" className="object-cover" priority />
+            <div className="relative aspect-[4/3] max-w-lg w-full mx-auto rounded-[3rem] overflow-hidden shadow-2xl shadow-primary/10">
+              <Image src="/images/cta-banner.webp" alt="Ambiente acolhedor para sua sessão em casa" fill sizes="(min-width: 1024px) 560px, 100vw" className="object-cover" priority />
             </div>
           </section>
 
@@ -132,6 +155,52 @@ export default function CriolipoliseEmCasa() {
               </h2>
               <p className="text-muted-foreground font-medium leading-relaxed text-lg max-w-xl mx-auto lg:mx-0">
                 A criolipólise é uma tecnologia não invasiva que utiliza o resfriamento controlado para atuar sobre as células de gordura localizada. Nas semanas seguintes, o organismo processa naturalmente essas células, podendo reduzir gradualmente as medidas da região tratada — sem cortes, agulhas ou anestesia, e com retorno imediato à rotina.
+              </p>
+            </div>
+          </section>
+
+          {/* Tecnologia */}
+          <section className="space-y-16 sda-reveal">
+            <div className="max-w-2xl mx-auto text-center space-y-6">
+              <div className="inline-flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.4em] text-primary">
+                <Cpu className="h-4 w-4" />
+                Equipamento Profissional
+              </div>
+              <h2 className="text-[var(--font-size-section)] font-medium leading-none tracking-tighter">
+                Tecnologia <br />
+                <span className="font-serif text-gradient-rose italic font-medium">Kryoplatten 4 em 1.</span>
+              </h2>
+              <p className="text-muted-foreground font-medium leading-relaxed text-lg max-w-xl mx-auto">
+                Levamos até você o mesmo equipamento de alta performance utilizado em clínicas especializadas: criolipólise, ultracavitação, ondas de choque e luz LED em um único aparelho, com monitoramento de temperatura em tempo real.
+              </p>
+            </div>
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div className="grid grid-cols-2 gap-6">
+                <div className="relative aspect-[3/4] rounded-[2rem] overflow-hidden shadow-2xl shadow-primary/10">
+                  <Image src="/images/kryoplatten-device.webp" alt="Equipamento Kryoplatten utilizado nas sessões" fill sizes="(min-width: 1024px) 280px, 45vw" className="object-cover" />
+                </div>
+                <div className="relative aspect-[3/4] rounded-[2rem] overflow-hidden shadow-2xl shadow-primary/10 mt-12">
+                  <Image src="/images/kryoplatten-applicators.webp" alt="Aplicadores de criolipólise do equipamento Kryoplatten" fill sizes="(min-width: 1024px) 280px, 45vw" className="object-cover" />
+                </div>
+              </div>
+              <div className="space-y-10">
+                {techFeatures.map((feature, i) => (
+                  <div key={i} className="flex gap-5">
+                    <div className="h-12 w-12 rounded-xl bg-white flex items-center justify-center shadow-lg shadow-primary/5 bg-texture shrink-0">
+                      {feature.icon}
+                    </div>
+                    <div className="space-y-1.5">
+                      <h3 className="text-lg font-medium tracking-tight">{feature.title}</h3>
+                      <p className="text-muted-foreground text-sm leading-relaxed font-medium opacity-80">{feature.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="glass-card rounded-[3rem] p-10 md:p-12 flex flex-col md:flex-row items-center gap-8 text-center md:text-left">
+              <Thermometer className="h-12 w-12 text-primary shrink-0" />
+              <p className="text-muted-foreground font-medium leading-relaxed">
+                Tela touch de 8&quot; monitora a temperatura da pele em tempo real durante toda a sessão, com aquecimento gradual ao final do procedimento — indicado para todos os tipos de pele.
               </p>
             </div>
           </section>
@@ -162,9 +231,9 @@ export default function CriolipoliseEmCasa() {
           </section>
 
           {/* Como funciona */}
-          <section className="glass-card rounded-[4rem] p-12 md:p-20 sda-reveal space-y-12">
+          <section className="glass-card rounded-[4rem] p-8 sm:p-12 md:p-20 sda-reveal space-y-12">
             <div className="max-w-2xl space-y-6">
-              <h2 className="text-5xl font-medium tracking-tighter leading-none">Como funciona o <br /><span className="font-serif text-gradient-rose italic">atendimento?</span></h2>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tighter leading-[1.1]">Como funciona o <br /><span className="font-serif text-gradient-rose italic">atendimento?</span></h2>
             </div>
             <div className="grid md:grid-cols-2 gap-8">
               {passos.map((passo, i) => (
@@ -181,7 +250,7 @@ export default function CriolipoliseEmCasa() {
           {/* Indicação / pontos de atenção */}
           <section className="grid lg:grid-cols-2 gap-16 items-center sda-reveal">
             <div className="space-y-6">
-              <h2 className="text-5xl font-medium tracking-tighter leading-none">Vale para <br /><span className="font-serif text-gradient-rose italic">todo mundo?</span></h2>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tighter leading-[1.1]">Vale para <br /><span className="font-serif text-gradient-rose italic">todo mundo?</span></h2>
               <p className="text-muted-foreground font-medium leading-relaxed text-lg">
                 A criolipólise é indicada para gordura localizada em pessoas com boa saúde geral. Gestantes, lactantes e pessoas com determinadas condições de saúde podem ter restrições — por isso, toda sessão começa com uma avaliação individual para confirmar se o procedimento é adequado para você.
               </p>
@@ -200,7 +269,7 @@ export default function CriolipoliseEmCasa() {
 
           {/* FAQ */}
           <section className="space-y-8 sda-reveal">
-            <h2 className="text-5xl font-medium tracking-tighter leading-none text-center">Perguntas <br /><span className="font-serif text-gradient-rose italic">Rápidas.</span></h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tighter leading-[1.1] text-center">Perguntas <br /><span className="font-serif text-gradient-rose italic">Rápidas.</span></h2>
             <div className="space-y-4 max-w-3xl mx-auto pt-8">
               {faqItems.map((item, i) => (
                 <details key={i} className="group glass-card rounded-[2rem] border-primary/5 open:border-primary/20 transition-colors">
@@ -217,7 +286,7 @@ export default function CriolipoliseEmCasa() {
           </section>
 
           {/* CTA Final */}
-          <section id="agendar" className="glass-card rounded-[4rem] p-12 md:p-20 text-center space-y-8 sda-reveal">
+          <section id="agendar" className="glass-card rounded-[4rem] p-8 sm:p-12 md:p-20 text-center space-y-8 sda-reveal">
             <h3 className="text-4xl font-medium tracking-tighter">Pronta para começar?</h3>
             <p className="text-muted-foreground font-medium leading-relaxed max-w-md mx-auto">
               Fale agora com nossa equipe pelo WhatsApp e agende sua avaliação gratuita, sem compromisso.

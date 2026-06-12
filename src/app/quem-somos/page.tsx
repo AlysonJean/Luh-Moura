@@ -36,7 +36,7 @@ export default function QuemSomos() {
 
       <MarketingNav label="Nossa História" ctaHref="/contato" ctaLabel="Agendar" />
 
-      <main className="container mx-auto px-6 pt-48">
+      <main className="container mx-auto px-6 pt-28 sm:pt-36 md:pt-48">
         <div className="max-w-6xl mx-auto space-y-32">
 
           {/* Hero */}
@@ -87,11 +87,11 @@ export default function QuemSomos() {
           </section>
 
           {/* The Clinic */}
-          <section className="glass-card rounded-[4rem] p-12 md:p-24 relative overflow-hidden sda-reveal">
+          <section className="glass-card rounded-[4rem] p-8 sm:p-12 md:p-24 relative overflow-hidden sda-reveal">
             <div className="relative z-10 grid md:grid-cols-2 gap-16 items-center">
               <div className="space-y-8">
                 <MapPin className="h-12 w-12 text-primary" />
-                <h2 className="text-5xl font-medium tracking-tighter leading-none">Nosso <br /><span className="font-serif text-gradient-rose italic">espaço.</span></h2>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tighter leading-[1.1]">Nosso <br /><span className="font-serif text-gradient-rose italic">espaço.</span></h2>
                 <p className="text-muted-foreground font-medium leading-relaxed text-lg">
                   Em Belo Horizonte, cuidamos de cada detalhe para que sua visita seja tranquila, confortável e acolhedora — um ambiente reservado e uma equipe atenta para te acompanhar do início ao fim da sua jornada.
                 </p>

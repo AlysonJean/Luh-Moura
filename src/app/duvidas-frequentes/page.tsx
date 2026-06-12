@@ -109,7 +109,7 @@ export default function DuvidasFrequentes() {
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-      <main className="container mx-auto px-6 pt-48">
+      <main className="container mx-auto px-6 pt-28 sm:pt-36 md:pt-48">
         <div className="max-w-4xl mx-auto space-y-24">
 
           <header className="max-w-2xl mx-auto text-center space-y-8 sda-reveal">
@@ -152,7 +152,7 @@ export default function DuvidasFrequentes() {
           ))}
 
           {/* CTA */}
-          <section className="glass-card rounded-[4rem] p-12 md:p-20 text-center space-y-8 sda-reveal">
+          <section className="glass-card rounded-[4rem] p-8 sm:p-12 md:p-20 text-center space-y-8 sda-reveal">
             <h3 className="text-4xl font-medium tracking-tighter">Ainda com dúvidas?</h3>
             <p className="text-muted-foreground font-medium leading-relaxed max-w-md mx-auto">Nossa equipe de concierge está pronta para te ajudar diretamente pelo WhatsApp.</p>
             <a

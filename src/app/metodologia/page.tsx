@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowLeft, Award, Sun, Wind, Gem, ChevronRight } from "lucide-react";
-import { LogoMark } from "@/components/logo";
+import { Award, Sun, Wind, Gem, ChevronRight } from "lucide-react";
+import { MarketingNav } from "@/components/marketing-nav";
 
 export const metadata: Metadata = {
   title: "Metodologia | Luh Moura Estética Avançada",
@@ -39,23 +39,9 @@ export default function Metodologia() {
         </filter>
       </svg>
 
-      <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[min(90%,1200px)]">
-        <div className="glass-card px-8 py-4 rounded-[2rem] flex items-center justify-between border-primary/10 bg-white/70">
-          <Link href="/" className="flex items-center gap-2 text-[10px] font-medium uppercase tracking-widest text-muted hover:text-primary transition-colors">
-            <ArrowLeft className="h-4 w-4" />
-            Voltar
-          </Link>
-          <div className="flex items-center gap-3">
-            <LogoMark className="h-9 w-9" />
-            <span className="text-[10px] font-medium uppercase tracking-[0.3em] text-foreground">Essência Signature</span>
-          </div>
-          <Link href="/portal" className="px-5 py-2 rounded-xl bg-foreground text-background font-bold text-[9px] uppercase tracking-widest transition-all hover:bg-muted shadow-lg shadow-foreground/10">
-            Acesso VIP
-          </Link>
-        </div>
-      </nav>
+      <MarketingNav label="Essência Signature" ctaHref="/portal" ctaLabel="Acesso VIP" />
 
-      <main className="container mx-auto px-6 pt-48">
+      <main className="container mx-auto px-6 pt-28 sm:pt-36 md:pt-48">
         <div className="max-w-6xl mx-auto space-y-32">
 
           {/* Hero Section */}
@@ -91,11 +77,11 @@ export default function Metodologia() {
           </section>
 
           {/* Core Philosophy Section */}
-          <section className="glass-card rounded-[4rem] p-12 md:p-24 relative overflow-hidden sda-reveal">
+          <section className="glass-card rounded-[4rem] p-8 sm:p-12 md:p-24 relative overflow-hidden sda-reveal">
              <div className="relative z-10 flex flex-col md:flex-row gap-16 items-center">
                 <div className="flex-1 space-y-8">
                    <Award className="h-12 w-12 text-primary" />
-                   <h2 className="text-5xl font-medium tracking-tighter leading-none">O Selo de <br /><span className="font-serif text-gradient-rose italic">Excelência LM.</span></h2>
+                   <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tighter leading-[1.1]">O Selo de <br /><span className="font-serif text-gradient-rose italic">Excelência LM.</span></h2>
                    <p className="text-muted font-medium leading-relaxed text-lg">
                       Cada protocolo desenvolvido pela Dra. Luh Moura carrega um selo de compromisso absoluto. Não aceitamos nada menos que a perfeição técnica, protegida pelo mais alto padrão de segurança biológica e ética profissional.
                    </p>

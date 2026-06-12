@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Image from "next/image";
-import { ArrowLeft, Sparkles, Zap, Shield, ChevronRight } from "lucide-react";
-import { LogoMark } from "@/components/logo";
+import { Sparkles, Zap, Shield, ChevronRight } from "lucide-react";
+import { MarketingNav } from "@/components/marketing-nav";
 
 export const metadata: Metadata = {
   title: "Procedimentos | Luh Moura Estética Avançada",
   description: "Conheça os protocolos exclusivos de harmonização facial, body sculpt e longevidade da Dra. Luh Moura.",
   openGraph: { title: "Procedimentos | Luh Moura Estética Avançada", description: "Conheça os protocolos exclusivos de harmonização facial, body sculpt e longevidade da Dra. Luh Moura." }
 };
+
+const whatsappHref = (topic: string) =>
+  `https://wa.me/5531985537919?text=${encodeURIComponent(`Olá! Gostaria de saber mais sobre ${topic}.`)}`;
 
 export default function Procedimentos() {
   const categories = [
@@ -45,23 +47,9 @@ export default function Procedimentos() {
         </filter>
       </svg>
 
-      <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[min(90%,1200px)]">
-        <div className="glass-card px-8 py-4 rounded-[2rem] flex items-center justify-between border-primary/10 bg-white/70">
-          <Link href="/" className="flex items-center gap-2 text-[10px] font-medium uppercase tracking-widest text-muted hover:text-primary transition-colors">
-            <ArrowLeft className="h-4 w-4" />
-            Voltar
-          </Link>
-          <div className="flex items-center gap-3">
-            <LogoMark className="h-9 w-9" />
-            <span className="text-[10px] font-medium uppercase tracking-[0.3em] text-foreground">Menu de Excelência</span>
-          </div>
-          <Link href="/login" className="px-5 py-2 rounded-xl bg-foreground text-background font-bold text-[9px] uppercase tracking-widest transition-all hover:bg-muted shadow-lg shadow-foreground/10">
-            Portal
-          </Link>
-        </div>
-      </nav>
+      <MarketingNav label="Menu de Excelência" ctaHref="/login" ctaLabel="Portal" />
 
-      <main className="container mx-auto px-6 pt-48">
+      <main className="container mx-auto px-6 pt-28 sm:pt-36 md:pt-48">
         <header className="max-w-3xl mb-24 sda-reveal">
           <div className="inline-flex items-center gap-2 mb-6 text-[10px] font-medium uppercase tracking-[0.4em] text-primary">
              <div className="h-1 w-8 bg-primary" />
@@ -93,26 +81,38 @@ export default function Procedimentos() {
                   <div className="h-px w-full bg-gradient-to-r from-primary/30 to-transparent mb-8" />
                   <ul className="space-y-4">
                     {cat.items.map((item, j) => (
-                      <li key={j} className="flex items-center justify-between group cursor-pointer">
-                        <span className="text-xs font-medium uppercase tracking-widest text-foreground/80 group-hover:text-primary transition-colors">{item}</span>
-                        <ChevronRight className="h-4 w-4 text-primary opacity-0 group-hover:opacity-100 transition-all translate-x-[-10px] group-hover:translate-x-0" />
+                      <li key={j}>
+                        <a
+                          href={whatsappHref(item)}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-between group cursor-pointer"
+                        >
+                          <span className="text-xs font-medium uppercase tracking-widest text-foreground/80 group-hover:text-primary transition-colors">{item}</span>
+                          <ChevronRight className="h-4 w-4 text-primary opacity-0 group-hover:opacity-100 transition-all translate-x-[-10px] group-hover:translate-x-0" />
+                        </a>
                       </li>
                     ))}
                   </ul>
                 </div>
-                <button type="button" className="w-full h-16 rounded-2xl bg-foreground text-background text-[10px] font-medium uppercase tracking-[0.3em] hover:bg-muted transition-colors mt-auto">
+                <a
+                  href={whatsappHref(`os protocolos de ${cat.title}`)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full h-16 rounded-2xl bg-foreground text-background text-[10px] font-medium uppercase tracking-[0.3em] hover:bg-muted transition-colors mt-auto flex items-center justify-center"
+                >
                   Consultar Detalhes
-                </button>
+                </a>
               </div>
             </div>
           ))}
         </div>
 
         {/* Feature Highlight */}
-        <div className="mt-32 glass-card rounded-[4rem] p-12 md:p-20 overflow-hidden relative sda-reveal">
+        <div className="mt-32 glass-card rounded-[4rem] p-8 sm:p-12 md:p-20 overflow-hidden relative sda-reveal">
            <div className="relative z-10 grid md:grid-cols-2 gap-12 items-center">
               <div className="space-y-8">
-                 <h2 className="text-5xl font-medium tracking-tighter leading-none">Personalização <br /><span className="font-serif text-gradient-rose italic">Algorítmica.</span></h2>
+                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tighter leading-[1.1]">Personalização <br /><span className="font-serif text-gradient-rose italic">Algorítmica.</span></h2>
                  <p className="text-muted font-medium leading-relaxed">Cada diagnóstico começa com uma análise digital profunda da sua pele, permitindo que criemos protocolos matematicamente precisos para suas necessidades únicas.</p>
                  <div className="flex gap-6">
                     <div className="flex flex-col">

@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Luh Moura | Estética Avançada",
     description: "Sistema de gestão e acompanhamento estético.",
-    images: [{ url: "/images/og-image.jpg", width: 1200, height: 630, alt: "Luh Moura Estética Avançada" }],
+    images: [{ url: "/images/og-image.webp", width: 1200, height: 630, alt: "Luh Moura Estética Avançada" }],
   },
 };
 
